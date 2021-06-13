@@ -16,6 +16,18 @@
 	<script src="sl.js?id=IsuSvxQ&t=2">
 	</script>
 	<br><br><br>
+
+  <div class="footer">
+<code id="code">
+      &#x3C;script src=&#x22;https://soploader.sh20raj.repl.co/sl.js?id=WqoYv89&#x22;&#x3E;&#x3C;/script&#x3E;
+</code>
+
+  <a id="preview" href="preview.html?id=WqoYv89" target="_blank">
+  <button class="btn btn-outline-primary btn-lg btn-block">Preview</button>
+  </a>
+  <button class="btn btn-success btn-lg btn-block" onclick="copy()">Copy</button>
+  <br>
+</div>
   <div class="container">
     <header style="text-align:center;">
     <img src="https://i.imgur.com/IsuSvxQ.gif" alt="" srcset="">
@@ -29,6 +41,7 @@
    <br>
   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut totam a quod reprehenderit rerum aliquam ad perferendis maxime odit excepturi illum doloremque eaque placeat tempore, mollitia delectus labore tempora neque.
   <br>
+  See Video Documentation :- <a href="https://youtu.be/9l4VMsOZec4">https://youtu.be/9l4VMsOZec4</a> 
   <hr>
 
   Here second Parameter t is optional. It is for Setting the display time of loader in seconds.
@@ -40,50 +53,71 @@
 <h2>Here are Some Loaders :-</h2>
 <br>
 <h4>How to Integrate :- Just Copy the script tag and paste it on your website just after body Tag. (Starting of body)</h4>
-<pre>
-  <code id="code">
-    &#x3C;script src=&#x22;https://soploader.sh20raj.repl.co/sl.js?id=WqoYv89&#x22;&#x3E;&#x3C;/script&#x3E;
-</code>
-</pre>
-<a id="preview" href="preview.html?id=WqoYv89" target="_blank">
-<button class="btn btn-outline-primary btn-lg btn-block">Preview</button>
-</a>
-<button class="btn btn-success btn-lg btn-block" onclick="copy()">Copy</button>
-<br><hr><br>
+
+
+
+<hr><br>
 <h4>Click on the Loader to Get Code</h4>
 
   <div class="loaders">
     <div class="loader">
     <img src="https://i.imgur.com/IsuSvxQ.gif" alt="" onclick="code('IsuSvxQ')">
     </div>
-    <div class="loader">
-    <img src="https://i.imgur.com/WqoYv89.gif" alt="" onclick="code('WqoYv89')">
-    </div>
-    <div class="loader">
-    <img src="https://i.imgur.com/xITLIkj.gif" alt="" onclick="code('xITLIkj')">
-    </div>
-    <div class="loader">
-    <img src="https://i.imgur.com/GdLjjmZ.gif" alt="" onclick="code('GdLjjmZ')">
-    </div>
-    <div class="loader">
-    <img src="https://i.imgur.com/c3I1xLM.gif" alt="" onclick="code('c3I1xLM')">
-    </div>
-    <div class="loader">
-    <img src="https://i.imgur.com/aTrAdMH.gif" alt="" onclick="code('aTrAdMH')">
-    </div>
-    <div class="loader">
-    <img src="https://i.imgur.com/TmhaCvq.gif" alt="" onclick="code('TmhaCvq')">
-    </div>
-    <div class="loader">
-    <img src="https://i.imgur.com/IsuSvxQ.gif" alt="" onclick="code('IsuSvxQ')">
-    </div>
-    <div class="loader">
-    <img src="https://i.imgur.com/IsuSvxQ.gif" alt="" onclick="code('IsuSvxQ')">
-    </div>
   </div>
+  <script>
+    let idarr = 
+    ['mc51h6v','IsuSvxQ','WqoYv89',
+    'TmhaCvq','aTrAdMH','c3I1xLM',
+    'GdLjjmZ','xITLIkj','IsuSvxQ',
+    'mnZ9EkO','t7XrXKA','RcBKQQV',
+    'TRXJMf9','WNtLdqD','SdcJfwp',
+    'Xsmb85K','ZYtwLoM','UGVlhCH'
+    ];
+  var text="";
+  for (var i = 0; i < idarr.length; i++) {
+    text += `
+    <div class="loader">
+    <img src="https://i.imgur.com/${idarr[i]}.gif" alt="" onclick="code('${idarr[i]}')">
+    </div>
+    `;
+  }
+  document.querySelector('.loaders').innerHTML = text;
+  </script>
+
   <h3>More Loaders are Coming Soon...</h3> <a href="https://imgur.com/gallery/JFpuXe0"> Here</a>
+  <div class="bloaders"></div>
+  <script>
+    let bidarr = {
+    "items":[
+        {"id":"PjExVMH","bg":"white"},
+        {"id":"GHpK7Pa","bg":"white"},
+        {"id":"QVJvYeK","bg":"white"},
+        {"id":"wPMulqV","bg":"rgb(12,12,12)"},
+        {"id":"i1XopLs","bg":"rgb(68,83,184)"}
+        
+        ]
+        }
+   // [
+   // 'PjExVMH','GHpK7Pa','QVJvYeK'
+    //];
+  var btext="";
+  for (var i = 0; i < bidarr.items.length; i++) {
+    btext += `
+    <div class="loader">
+    <img src="https://i.imgur.com/${bidarr.items[i].id}.gif" alt="" onclick="code('${bidarr.items[i].id}','${bidarr.items[i].bg}')">
+    </div>
+    `;
+    console.log(bidarr.items[i].id);
+  }
+  document.querySelector('.bloaders').innerHTML = btext;
+  </script>
+
+  
   </div>
 </div>
+
+
+<br><br><br><br><br>
 </body>
 <script src="main.js"></script>
 </html>

@@ -12,6 +12,31 @@
   display: inline-block;
 }
 .loaders img {
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
+}
+.bloaders{
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+.bloaders img{
+  max-width: 500px;
+  border-radius: 10px;
+  padding: 4px;
+  margin: 2px;
+}
+.footer{
+  display: inline-block;
+  position: fixed;
+  bottom: 2px;
+  background: aqua;
+  text-align: center;
+  padding: 6px;
+  width: 100%;
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  border-radius: 20px;
+  margin: 20px;
 }

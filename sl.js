@@ -11,17 +11,21 @@ if(sl_pr.get('t')){
 } else {
   sl_t = 2000;
 }
-
+let sl_prid = "IsuSvxQ";
 if(sl_pr.get('id')){
-  sl_pr = sl_pr.get('id');
-} else {
-  sl_pr = "IsuSvxQ";
+  sl_prid = sl_pr.get('id');
+}
+if(sl_pr.get('full')){
+  document.querySelector('.soploader img').width = "100%";
 }
 
-
+let sl_bg = "#fff";
+if(sl_pr.get('bg')){
+  sl_bg = sl_pr.get('bg');
+}
 document.body.insertAdjacentHTML('afterbegin',`
   <div class="soploader">
-  <img src="https://i.imgur.com/${sl_pr}.gif" alt="SopLoader Loading..."
+  <img src="https://i.imgur.com/${sl_prid}.gif" alt="SopLoader Loading...">
   </div>
   <style>
   
@@ -31,7 +35,7 @@ document.body.insertAdjacentHTML('afterbegin',`
       transform: translate(-50%,-50%);
       display: block;
       position: fixed;
-      background: rgb(255, 255, 255);
+      background: #fff;
       z-index: 1920;
       width: 100%;
       height: 100%;

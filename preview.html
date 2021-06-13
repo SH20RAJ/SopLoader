@@ -12,34 +12,28 @@
 		let sl_pr = new URL(document.location.href);
 sl_pr = sl_pr.searchParams;
 console.log(sl_pr.get('id'));
+let sl_prid = "IsuSvxQ";
 if(sl_pr.get('id')){
-  sl_pr = sl_pr.get('id');
-} else {
-  sl_pr = "IsuSvxQ";
+  sl_prid = sl_pr.get('id');
 }
 
+let sl_bg = "#fff";
+if(sl_pr.get('bg')){
+  sl_bg = sl_pr.get('bg');
+}
 
 document.body.insertAdjacentHTML('afterbegin',`
   <div class="soploader">
-  <img src="https://i.imgur.com/${sl_pr}.gif" alt="SopLoader Loading..."
+  <img src="https://i.imgur.com/${sl_prid}.gif" alt="SopLoader Loading...">
   </div>
-  
-`);
-
-document.onload =  setTimeout(function(){
-    document.querySelector('.soploader').style.display = "none";
-  }
-  ,2000)
-	</script>
-</body>
-<style>
+  <style>
 	.soploader {
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
 		display: block;
 		position: fixed;
-		background: rgb(255, 255, 255);
+		background: ${sl_bg};
 		z-index: 1920;
 		width: 100%;
 		height: 100%;
@@ -57,5 +51,14 @@ document.onload =  setTimeout(function(){
 		transform: translate(-50%, -50%);
 	}
 </style>
+
+`);
+
+document.onload =  setTimeout(function(){
+    document.querySelector('.soploader').style.display = "none";
+  }
+  ,4000)
+	</script>
+</body>
 
 </html>
