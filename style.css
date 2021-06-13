@@ -1,0 +1,17 @@
+#loader_list {
+  margin:5%;
+}
+#code {
+  display: inline-block;
+  user-select: all;
+}
+.loader{
+  display: inline-block;
+}
+.loaders{
+  display: inline-block;
+}
+.loaders img {
+  width: 150px;
+  height: 150px;
+}

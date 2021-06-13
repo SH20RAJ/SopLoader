@@ -1,0 +1,62 @@
+<html>
+
+<head>
+	<title>How to create fade-out effect on page load using javascript</title>
+	<script type="text/javascript">
+		window.onload=fadeout; 
+			
+		function fadeout() { 
+var fade= document.getElementById("lpld1920"); 
+	
+	var intervalID = setInterval(function () { 
+		
+		if (!fade.style.opacity) { 
+			fade.style.opacity = 1; 
+		} 
+		
+		
+		if (fade.style.opacity > 0) { 
+			fade.style.opacity -= 0.1; 
+		} 
+		
+		else { 
+			clearInterval(intervalID); 
+		} 
+		
+	}, 200); 
+  setTimeout(function(){fade.style.display = 'none' ;},1000)
+  
+}
+	</script>
+	<style>
+		 #lpld1920 {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			margin: auto;
+		}
+	</style>
+
+</head>
+
+<body>
+	<br> 
+<img id="lpld1920" src="https://i.imgur.com/ESqk94c.gif" class="loop_loader"/>
+
+	<h1 style="color: green"> 
+		GeeksForGeeks 
+	</h1> 
+
+	<b> 
+		How to create fade-out effect 
+		on page load using javascript 
+	</b> 
+
+
+	<p> 
+		This page will fade-out after loading 
+	</p> 
+</body> 
+</html>
