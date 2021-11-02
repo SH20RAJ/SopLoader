@@ -9,6 +9,8 @@ Here second Parameter t is optional. It is for Setting the display time of loade
 
 Here first parameter id is also optional.
 
+## See Video Documentation :- https://www.youtube.com/watch?v=9l4VMsOZec4
+## Documentation :- https://codexdindia.blogspot.com/2021/06/add-preloaders-to-your-website-or.html
 
 Here are Some Loaders :-
 
