@@ -61,4 +61,6 @@ document.onload =  setTimeout(function(){
   }
   ,sl_t)
 
+  console.log('SopLoader :- Free Preloaders for Website :- https://soploader.sh20raj.repl.co/')
+
 
