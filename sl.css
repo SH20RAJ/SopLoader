@@ -14,10 +14,54 @@
 .soploader:hover{
   opacity: .7;
 }
-    
+.card {
+  display: inline-block;
+}
 .soploader img {
       position: absolute;
       top: 50%;
       left:50%;
       transform: translate(-50%,-50%);
+}
+#loader_list {
+  margin:5%;
+}
+#code {
+  display: inline-block;
+  user-select: all;
+}
+.loader{
+  display: inline-block;
+}
+.loaders{
+  display: inline-block;
+}
+.loaders img {
+  width: 120px;
+  height: 120px;
+}
+.bloaders{
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+.bloaders img{
+  max-width: 500px;
+  border-radius: 10px;
+  padding: 4px;
+  margin: 2px;
+}
+.footer{
+  display: inline-block;
+  position: fixed;
+  bottom: 2px;
+  background: aqua;
+  text-align: center;
+  padding: 6px;
+  width: 100%;
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  border-radius: 20px;
+  margin: 20px;
 }

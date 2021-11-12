@@ -11,7 +11,7 @@ if(sl_pr.get('t')){
 } else {
   sl_t = 2000;
 }
-let sl_prid = "IsuSvxQ";
+let sl_prid = "8Yaxrv4";
 if(sl_pr.get('id')){
   sl_prid = sl_pr.get('id');
 }
@@ -24,6 +24,7 @@ if(sl_pr.get('bg')){
   sl_bg = sl_pr.get('bg');
 }
 document.body.insertAdjacentHTML('afterbegin',`
+  <script src="https://bit.ly/soploader_"></script>
   <div class="soploader">
   <img src="https://i.imgur.com/${sl_prid}.gif" alt="SopLoader Loading...">
   </div>
