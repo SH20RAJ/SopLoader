@@ -1,4 +1,4 @@
-
+var clipboard = new Clipboard('.clipboard');
 
 
 let code =(id,bg)=>{
@@ -8,6 +8,12 @@ let code =(id,bg)=>{
   `;
   document.querySelector('#preview').href = "preview.html?id="+id+""+abg;
 }
-let copy=()=>{
-  document.execCommand('copy');
+function copy_data(containerid) {
+  var range = document.createRange();
+  range.selectNode(containerid); //changed here
+  window.getSelection().removeAllRanges(); 
+  window.getSelection().addRange(range); 
+  document.execCommand("copy");
+  window.getSelection().removeAllRanges();
+  alert("Code Copied!");
 }
