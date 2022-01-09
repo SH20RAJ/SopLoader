@@ -5,6 +5,8 @@ SopLoader :- Free Preloaders for Website or Blogger - https://sh20raj.github.io/
 
 Website :- https://SopLoader.sh20raj.repl.co
 
+## See All SopProducts :- https://sh20raj.github.io/SopProducts/
+
 Here second Parameter t is optional. It is for Setting the display time of loader in seconds.
 
 Here first parameter id is also optional.
@@ -16,6 +18,13 @@ Here are Some Loaders :-
 
 How to Integrate :- Just Copy the script tag and paste it on your website just after body Tag. (Starting of body)
 Here are Some Loaders more loaders are adding soon...
+
+Use the Code on your Website. 
+```
+<script src="https://soploader.sh20raj.repl.co/sl.js?id=8Yaxrv4"></script>
+```
+You can also use custom loader by Uploading an image on imgur and using them image id in the id parameter of script tag.
+
 
 ![_ _In love](https://user-images.githubusercontent.com/66713844/139853688-36d9784e-c688-49e0-a83a-913360f77ee3.gif)
 ![__Iphone-spinner-1](https://user-images.githubusercontent.com/66713844/139853696-692d1ceb-9842-405e-9d85-af6e5c40703a.gif)
