@@ -19,7 +19,7 @@ Here are Some Loaders :-
 How to Integrate :- Just Copy the script tag and paste it on your website just after body Tag. (Starting of body)
 Here are Some Loaders more loaders are adding soon...
 
-Use the Code on your Website. 
+Use the Code on your Website. Put the Script Tag Just After Starting of ```<body>``` Tag.
 ```
 <script src="https://soploader.sh20raj.repl.co/sl.js?id=8Yaxrv4"></script>
 ```
