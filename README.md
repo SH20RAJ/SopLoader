@@ -5,25 +5,33 @@ SopLoader :- Free Preloaders for Website or Blogger - https://sh20raj.github.io/
 
 Website :- https://SopLoader.sh20raj.repl.co
 
-## See All SopProducts :- https://sh20raj.github.io/SopProducts/
+### See All SopProducts :- https://sh20raj.github.io/SopProducts/
+
+---
 
 Here second Parameter t is optional. It is for Setting the display time of loader in seconds.
 
 Here first parameter id is also optional.
 
-## See Video Documentation :- https://www.youtube.com/watch?v=9l4VMsOZec4
-## Documentation :- https://codexdindia.blogspot.com/2021/06/add-preloaders-to-your-website-or.html
+> See Video Documentation :- https://www.youtube.com/watch?v=9l4VMsOZec4
+> 
+> Documentation :- https://codexdindia.blogspot.com/2021/06/add-preloaders-to-your-website-or.html
 
-Here are Some Loaders :-
+---
 
-How to Integrate :- Just Copy the script tag and paste it on your website just after body Tag. (Starting of body)
-Here are Some Loaders more loaders are adding soon...
+> How to Integrate :- Just Copy the script tag and paste it on your website just after body Tag. (Starting of body)
 
-Use the Code on your Website. Put the Script Tag Just After Starting of ```<body>``` Tag.
-```
+
+### Here are Some Loaders more loaders are adding soon...
+
+- Use the Code on your Website. Put the Script Tag Just After Starting of `<body>` Tag.
+
+```html
 <script src="https://soploader.sh20raj.repl.co/sl.js?id=8Yaxrv4"></script>
 ```
-You can also use custom loader by Uploading an image on imgur and using them image id in the id parameter of script tag.
+**You can also use custom loader by Uploading an image on imgur and using them image id in the id parameter of script tag.**
+
+Here are Some Loaders :-
 
 
 ![_ _In love](https://user-images.githubusercontent.com/66713844/139853688-36d9784e-c688-49e0-a83a-913360f77ee3.gif)
@@ -56,3 +64,5 @@ You can also use custom loader by Uploading an image on imgur and using them ima
 ![Spinning arrows](https://user-images.githubusercontent.com/66713844/139854164-d755c9ed-6bfa-484c-b051-de7cff60f616.gif)
 ![Walk](https://user-images.githubusercontent.com/66713844/139854168-57c1e306-e296-4c71-8e13-18e520b2cbf7.gif)
 ![Winter](https://user-images.githubusercontent.com/66713844/139854171-e3546481-2094-4065-8159-d68995bfcb66.gif)
+
+ <a href="https://sh20raj.github.io/SopProducts/" rel="dofollow"> &copy; SopProducts</a>
