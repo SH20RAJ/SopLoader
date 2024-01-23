@@ -98,30 +98,47 @@
         <input type="file" id="file-input" />
     </div>
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
     var dropArea = document.getElementById('drop-area');
+    var loadersContainer = document.querySelector('.loaders');
+    var clientId = '6db47bd7029562d';
 
-    dropArea.addEventListener('dragover', function (e) {
+    dropArea.addEventListener('dragover', handleDragOver);
+    dropArea.addEventListener('dragleave', handleDragLeave);
+    dropArea.addEventListener('drop', handleDrop);
+    document.getElementById('file-input').addEventListener('change', handleFileInput);
+
+    // Retrieve existing Imgur IDs from localStorage or initialize an empty array
+    var storedImgurIds = JSON.parse(localStorage.getItem('imgurIds')) || [];
+
+    // Default loader images
+    var defaultImgurIds = [
+        '8Yaxrv4', 'mc51h6v', 'TmhaCvq', 'aTrAdMH', 'c3I1xLM', 'GdLjjmZ', 'xITLIkj',
+        'WqoYv89', 'mnZ9EkO', 't7XrXKA', 'RcBKQQV', 'TRXJMf9', 'WNtLdqD', 'SdcJfwp',
+        'Xsmb85K', 'ZYtwLoM', 'UGVlhCH'
+    ];
+
+    // Render default and existing images
+    renderImages([...defaultImgurIds, ...storedImgurIds]);
+
+    function handleDragOver(e) {
         e.preventDefault();
         dropArea.classList.add('highlight');
-    });
+    }
 
-    dropArea.addEventListener('dragleave', function () {
+    function handleDragLeave() {
         dropArea.classList.remove('highlight');
-    });
+    }
 
-    dropArea.addEventListener('drop', function (e) {
+    function handleDrop(e) {
         e.preventDefault();
         dropArea.classList.remove('highlight');
+        handleFiles(e.dataTransfer.files);
+    }
 
-        var files = e.dataTransfer.files;
-        handleFiles(files);
-    });
-
-    document.getElementById('file-input').addEventListener('change', function () {
-        var files = this.files;
-        handleFiles(files);
-    });
+    function handleFileInput() {
+        handleFiles(this.files);
+    }
 
     function handleFiles(files) {
         for (var i = 0; i < files.length; i++) {
@@ -136,7 +153,7 @@
         fetch('https://api.imgur.com/3/image', {
             method: 'POST',
             headers: {
-                'Authorization': 'Client-ID 6db47bd7029562d'
+                'Authorization': 'Client-ID ' + clientId
             },
             body: formData
         })
@@ -151,50 +168,38 @@
     }
 
     function addId(imgurId) {
-    // Your function to handle the Imgur ID goes here
-    console.log('Imgur ID:', imgurId);
+        console.log('Imgur ID:', imgurId);
 
-    // Assuming you have a container with class 'loaders'
-    var loadersContainer = document.querySelector('.loaders');
+        // Check if the Imgur ID is not already in the storedImgurIds array
+        if (!storedImgurIds.includes(imgurId)) {
+            // Add the new Imgur ID to the storedImgurIds array
+            storedImgurIds.push(imgurId);
 
-    // Construct the HTML for the new card
-    var text = `
-        <div class="card loader">
-            <a href="#code">
-                <img src="https://i.imgur.com/${imgurId}.gif" alt="" onclick="code('${imgurId}')">
-            </a>
-        </div>
-    `;
+            // Save the updated array to localStorage
+            localStorage.setItem('imgurIds', JSON.stringify(storedImgurIds));
 
-    // Insert the HTML at the top of the loaders container
-    loadersContainer.insertAdjacentHTML('afterbegin', text);
-}
-
-
-    let idarr;
-    function showlist() {
-            let idarr = 
-            ['8Yaxrv4','mc51h6v',
-            'TmhaCvq','aTrAdMH','c3I1xLM',
-            'GdLjjmZ','xITLIkj','WqoYv89',
-            'mnZ9EkO','t7XrXKA','RcBKQQV',
-            'TRXJMf9','WNtLdqD','SdcJfwp',
-            'Xsmb85K','ZYtwLoM','UGVlhCH',
-            ];
-        var text="";
-        for (var i = 0; i < idarr.length; i++) {
-            text += `
-            <div class="card loader">
-            <a href="#code">
-            <img src="https://i.imgur.com/${idarr[i]}.gif" alt="" onclick="code('${idarr[i]}')"></a>
-            </div>
-            `;
+            // Render all images (including the new one)
+            renderImages([...defaultImgurIds, ...storedImgurIds]);
         }
-        document.querySelector('.loaders').innerHTML = text;
     }
- showlist();
-});
 
+    function renderImages(imgurIds) {
+        // Clear the container
+        loadersContainer.innerHTML = '';
+
+        // Construct HTML for each image and append it to the container
+        imgurIds.forEach(function (imgurId) {
+            var html = `
+                <div class="card loader">
+                    <a href="#code">
+                        <img src="https://i.imgur.com/${imgurId}.gif" alt="" onclick="code('${imgurId}')">
+                    </a>
+                </div>
+            `;
+            loadersContainer.insertAdjacentHTML('beforeend', html);
+        });
+    }
+});
 </script>
 
 
