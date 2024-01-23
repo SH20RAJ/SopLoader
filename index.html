@@ -77,28 +77,128 @@
     </div>
   </div>
   <script>
-    let idarr = 
-    ['8Yaxrv4','mc51h6v',
-    'TmhaCvq','aTrAdMH','c3I1xLM',
-    'GdLjjmZ','xITLIkj','WqoYv89',
-    'mnZ9EkO','t7XrXKA','RcBKQQV',
-    'TRXJMf9','WNtLdqD','SdcJfwp',
-    'Xsmb85K','ZYtwLoM','UGVlhCH',
+
     
-    ];
-  var text="";
-  for (var i = 0; i < idarr.length; i++) {
-    text += `
-    <div class="card loader">
-    <a href="#code">
-    <img src="https://i.imgur.com/${idarr[i]}.gif" alt="" onclick="code('${idarr[i]}')"></a>
-    </div>
-    `;
-  }
-  document.querySelector('.loaders').innerHTML = text;
   </script>
 
-  <h3>More Loaders are Coming Soon...</h3> <a href="https://imgur.com/gallery/JFpuXe0"> Here</a>
+<h3>Upload Your Own Loader/GIF File | More <a href="https://imgur.com/gallery/JFpuXe0">Here</a></h3> 
+
+    <style>
+        #drop-area {
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+
+    <div id="drop-area">
+        <p>Drag and drop an image here or click to select one.</p>
+        <input type="file" id="file-input" />
+    </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    var dropArea = document.getElementById('drop-area');
+
+    dropArea.addEventListener('dragover', function (e) {
+        e.preventDefault();
+        dropArea.classList.add('highlight');
+    });
+
+    dropArea.addEventListener('dragleave', function () {
+        dropArea.classList.remove('highlight');
+    });
+
+    dropArea.addEventListener('drop', function (e) {
+        e.preventDefault();
+        dropArea.classList.remove('highlight');
+
+        var files = e.dataTransfer.files;
+        handleFiles(files);
+    });
+
+    document.getElementById('file-input').addEventListener('change', function () {
+        var files = this.files;
+        handleFiles(files);
+    });
+
+    function handleFiles(files) {
+        for (var i = 0; i < files.length; i++) {
+            uploadFile(files[i]);
+        }
+    }
+
+    function uploadFile(file) {
+        var formData = new FormData();
+        formData.append('image', file);
+
+        fetch('https://api.imgur.com/3/image', {
+            method: 'POST',
+            headers: {
+                'Authorization': 'Client-ID 6db47bd7029562d'
+            },
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Image uploaded successfully. Imgur ID:', data.data.id);
+            addId(data.data.id);
+        })
+        .catch(error => {
+            console.error('Error uploading image:', error);
+        });
+    }
+
+    function addId(imgurId) {
+    // Your function to handle the Imgur ID goes here
+    console.log('Imgur ID:', imgurId);
+
+    // Assuming you have a container with class 'loaders'
+    var loadersContainer = document.querySelector('.loaders');
+
+    // Construct the HTML for the new card
+    var text = `
+        <div class="card loader">
+            <a href="#code">
+                <img src="https://i.imgur.com/${imgurId}.gif" alt="" onclick="code('${imgurId}')">
+            </a>
+        </div>
+    `;
+
+    // Insert the HTML at the top of the loaders container
+    loadersContainer.insertAdjacentHTML('afterbegin', text);
+}
+
+
+    let idarr;
+    function showlist() {
+            let idarr = 
+            ['8Yaxrv4','mc51h6v',
+            'TmhaCvq','aTrAdMH','c3I1xLM',
+            'GdLjjmZ','xITLIkj','WqoYv89',
+            'mnZ9EkO','t7XrXKA','RcBKQQV',
+            'TRXJMf9','WNtLdqD','SdcJfwp',
+            'Xsmb85K','ZYtwLoM','UGVlhCH',
+            ];
+        var text="";
+        for (var i = 0; i < idarr.length; i++) {
+            text += `
+            <div class="card loader">
+            <a href="#code">
+            <img src="https://i.imgur.com/${idarr[i]}.gif" alt="" onclick="code('${idarr[i]}')"></a>
+            </div>
+            `;
+        }
+        document.querySelector('.loaders').innerHTML = text;
+    }
+ showlist();
+});
+
+</script>
+
+
+
   <div class="bloaders"></div>
   <script>
     let bidarr = {
