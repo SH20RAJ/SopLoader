@@ -3,7 +3,7 @@ SopLoader :- Free Preloaders for Website or Blogger - https://sh20raj.github.io/
 
 ![Gear-0 2s-200px](https://user-images.githubusercontent.com/66713844/139852925-95d2bf9b-2210-491a-9809-a18a880a2393.gif)
 
-Website :- https://SopLoader.sh20raj.repl.co
+Website :- https://sh20raj.github.io/SopLoader/
 
 ### See All SopProducts :- https://sh20raj.github.io/SopProducts/
 
@@ -27,9 +27,11 @@ Here first parameter id is also optional.
 - Use the Code on your Website. Put the Script Tag Just After Starting of `<body>` Tag.
 
 ```html
-<script src="https://soploader.sh20raj.repl.co/sl.js?id=8Yaxrv4"></script>
+<script src="https://sh20raj.github.io/SopLoader/sl.js?id=8Yaxrv4"></script>
 ```
 **You can also use custom loader by Uploading an image on imgur and using them image id in the id parameter of script tag.**
+- Direct Image Uploading functionality added on website =>
+  
 
 Here are Some Loaders :-
 
